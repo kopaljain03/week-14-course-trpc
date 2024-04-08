@@ -1,5 +1,9 @@
 import { initTRPC } from "@trpc/server";
-const t = initTRPC.create();
+const t = initTRPC
+  .context<{
+    username?: string;
+  }>()
+  .create();
 /**
  * Export reusable router and procedure helpers
  * that can be used throughout the router
