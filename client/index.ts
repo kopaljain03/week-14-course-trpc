@@ -10,3 +10,12 @@ const trpc = createTRPCClient<AppRouter>({
     }),
   ],
 });
+
+async function main() {
+  let res = await trpc.createTodo.mutate({
+    tit: "hadfhfsd",
+    desc: "heyoooooo",
+  });
+  console.log(JSON.stringify(res));
+}
+main();
